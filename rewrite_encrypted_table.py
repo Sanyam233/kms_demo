@@ -1,11 +1,17 @@
 from google.cloud import bigquery
+import os
+from dotenv import load_dotenv
+
+
+# Load the .env file
+load_dotenv()
 
 # Initialize the BigQuery client
 client = bigquery.Client()
 TABLE_ID = "vpc-1-439422.kmsTest.Test1"
 NEW_TABLE_ID = "vpc-1-439422.kmsTest.Test3"
-KMS_KEY="projects/vpc-1-439422/locations/us/keyRings/us-test/cryptoKeys/us-test-key"
-# Set the query
+KMS_KEY=os.getenv("KMS_KEY")# Set the query
+
 query = f"SELECT x, y FROM `{TABLE_ID}`"
 
 

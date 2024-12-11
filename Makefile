@@ -1,4 +1,4 @@
-export GOOGLE_APPLICATION_CREDENTIALS := ./kms-gcp-20241210.json
+export GOOGLE_APPLICATION_CREDENTIALS := ./service-key.json
 
 create:
 	python3 create_encrypted_table.py
@@ -11,6 +11,3 @@ rewrite:
 
 decrypt:
 	python3 decrypt_table_col.py
-
-show-gcp-service:
-	bq show --encryption_service_account --project_id=vpc-1-439422

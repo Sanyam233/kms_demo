@@ -6,7 +6,7 @@ import os
 load_dotenv()
 
 client = bigquery.Client()
-TABLE_ID = "vpc-1-439422.kmsTest.Test1"
+TABLE_ID = "project.dataset.table"
 KMS_KEY=os.getenv("KMS_KEY")
 
 def create_gbq_table():
@@ -37,7 +37,7 @@ def insert_rows():
 
 if __name__ == "__main__":
     # Create an encrypted BQ table
-    # create_gbq_table()
+    create_gbq_table()
 
     # Insert some dummy data
     insert_rows()

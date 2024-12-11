@@ -6,7 +6,6 @@ from dotenv import load_dotenv
 load_dotenv()
 
 client = bigquery.Client()
-TABLE_ID = "vpc-1-439422.kmsTest.Test2"
 KMS_KEY=os.getenv("KMS_KEY")
 
 def read_sql_file(path):

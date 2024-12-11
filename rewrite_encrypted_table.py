@@ -8,8 +8,8 @@ load_dotenv()
 
 # Initialize the BigQuery client
 client = bigquery.Client()
-TABLE_ID = "vpc-1-439422.kmsTest.Test1"
-NEW_TABLE_ID = "vpc-1-439422.kmsTest.Test3"
+TABLE_ID = "project.dataset.table"
+NEW_TABLE_ID = "project.dataset.table"
 KMS_KEY=os.getenv("KMS_KEY")# Set the query
 
 query = f"SELECT x, y FROM `{TABLE_ID}`"
